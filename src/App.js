@@ -1,11 +1,11 @@
-
+import Sidebar from "../src/components/Sidebar/Sidebar"
 import './App.css';
-import Dashboard from './components/Dashboard/Dashboard';
 function App() {
   return (
     <div className="App">
-    <h3>Visualization Dashboard</h3>
-    <Dashboard/>
+    <div className="AppGlass">
+<Sidebar/>
+      </div>  
     </div>
   );
 }
