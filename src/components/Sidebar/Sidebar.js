@@ -25,13 +25,37 @@ const Sidebar = () => {
                     <span>Home</span>
                 </div>
 
+               
                 <div className="menuItem">
                     <div>
                         <SsidChartIcon />
                     </div>
-                    <span>Charts</span>
+                    <span> Year</span>
                 </div>
-
+                <div className="menuItem">
+                    <div>
+                        <SsidChartIcon />
+                    </div>
+                    <span> Country</span>
+                </div>
+                <div className="menuItem">
+                    <div>
+                        <SsidChartIcon />
+                    </div>
+                    <span>Topic</span>
+                </div>
+                <div className="menuItem">
+                    <div>
+                        <SsidChartIcon />
+                    </div>
+                    <span>Region</span>
+                </div>
+                <div className="menuItem">
+                    <div>
+                        <SsidChartIcon />
+                    </div>
+                    <span>City</span>
+                </div>
                 <div className="menuItem">
                     <div>
                         <FilterAltIcon />
