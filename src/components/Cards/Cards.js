@@ -6,6 +6,8 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import BrightnessLowIcon from '@mui/icons-material/BrightnessLow'; // Import the icon
 import StackedLineChartIcon from '@mui/icons-material/StackedLineChart';
+import chart from "../../images/chart.png"
+import "../Cards/cards.css"
 const Cards = () => {
   const cardStyles = {
     backgroundColor: 'lightpink',
@@ -19,7 +21,7 @@ const Cards = () => {
         <CardHeader
           avatar={
             <IconButton aria-label="intensity">
-             <StackedLineChartIcon/>
+                <img className='img' src={chart} alt='chart'></img>
             </IconButton>
           }
           title="Intensity"
@@ -34,7 +36,7 @@ const Cards = () => {
         <CardHeader
           avatar={
             <IconButton aria-label="intensity">
-              <StackedLineChartIcon/>
+            <img className='img' src={chart} alt='chart'></img>
             </IconButton>
           }
           title="Likelihood
@@ -50,8 +52,7 @@ const Cards = () => {
         <CardHeader
           avatar={
             <IconButton aria-label="intensity">
-                              <StackedLineChartIcon/>
-
+                         <img className='img' src={chart} alt='chart'></img>
             </IconButton>
           }
           title="Relevance"
