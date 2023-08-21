@@ -1,0 +1,8 @@
+/* yearq.css */
+
+/* Apply styles to the chart container */
+.chart-container {
+    width: 300%;
+    height: 600px; /* You can adjust the height as needed */
+  }
+  

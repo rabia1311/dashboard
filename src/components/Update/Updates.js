@@ -1,6 +1,10 @@
 import React from 'react'
 import Topic from "../Update/Topic/Topic"
 import Update from '../Cards/Update'
+
+
+import "../Cards/update.css"
+
 const Updates = () => {
   return (
   
