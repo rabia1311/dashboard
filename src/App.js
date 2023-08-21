@@ -1,14 +1,14 @@
 import Sidebar from "../src/components/Sidebar/Sidebar"
 import './App.css';
 import MainDash from "./components/Maindash/MainDash";
-import Topic from "../src/components/Topic/Topic";
+import Updates from "./components/Update/Updates";
 function App() {
   return (
     <div className="App">
     <div className="AppGlass">
 <Sidebar/>
 <MainDash/>
-<Topic/>
+<Updates/>
       </div>  
     </div>
   );
