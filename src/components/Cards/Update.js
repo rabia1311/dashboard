@@ -7,7 +7,7 @@ import "../Cards/update.css"
 
 const  Update=()=> {
   return (
-    <Card className="card-container" sx={{ minWidth: 275 }}>
+    <Card className="cardcontainer" sx={{ minWidth: 275  , backgroundColor: 'lightcyan'}}>
       <CardContent>
         <Typography sx={{ fontSize: 18 }} color="text.primary" gutterBottom>
           Updates

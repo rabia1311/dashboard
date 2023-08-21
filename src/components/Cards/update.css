@@ -1,11 +1,12 @@
 /* update.css */
 
-.card-container {
-    background-color: lightblue;
+.cardcontainer {
+    background-color: lightgreen;
     color: black;
     min-height: 400px; /* You can adjust this value to control the card's height */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
   }
   
