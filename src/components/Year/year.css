@@ -1,8 +1,8 @@
 /* yearq.css */
 
 /* Apply styles to the chart container */
-.chart-container {
-    width: 250%;
-    height: 800px; /* You can adjust the height as needed */
+.chartcontainer {
+    width: 130%;
+    height: 700px; /* You can adjust the height as needed */
   }
   

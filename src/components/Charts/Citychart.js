@@ -1,5 +1,7 @@
 import React from "react";
+import { useEffect } from "react";
 import { Chart } from "react-google-charts";
+import axios from "axios";
 import "../Year/year.css"
 const data = [
     [
@@ -28,11 +30,21 @@ const data = [
   };
   
   function CityChart() {
+    useEffect(() => {
+      // Fetch data from the API
+      axios.get("http://localhost:5000/dashboard/get")
+        .then(response => {
+          console.log("Fetched data:", response.data);  // Print the fetched data
+        })
+        .catch(error => {
+          console.error("Error fetching data:", error);
+        });
+    }, []);  // Empty dependency array ensures the effect runs only once
+  
     return (
-      <Chart 
-      className="chart-container"
+      <Chart
+        className="chart-container"
         chartType="ComboChart"
-        
         data={data}
         options={options}
       />
