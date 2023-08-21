@@ -6,7 +6,9 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import SsidChartIcon from '@mui/icons-material/SsidChart';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-
+import InsertChartIcon from '@mui/icons-material/InsertChart';
+import PieChartIcon from '@mui/icons-material/PieChart';
+import ScatterPlotTwoToneIcon from '@mui/icons-material/ScatterPlotTwoTone';
 const Sidebar = () => {
     const navigate = useNavigate();
     return (
@@ -35,13 +37,13 @@ const Sidebar = () => {
                 </div>
                 <div className="menuItem"  onClick={() => navigate("/country")}>
                     <div>
-                        <SsidChartIcon />
+                        <InsertChartIcon />
                     </div>
                     <span> Country</span>
                 </div>
                 <div className="menuItem"  onClick={() => navigate("/topic")}>
                     <div>
-                        <SsidChartIcon />
+                        <PieChartIcon />
                     </div>
                     <span>Topic</span>
                 </div>
@@ -53,7 +55,7 @@ const Sidebar = () => {
                 </div>
                 <div className="menuItem"  onClick={() => navigate("/city")}>
                     <div>
-                        <SsidChartIcon />
+                        <ScatterPlotTwoToneIcon />
                     </div>
                     <span>City</span>
                 </div>
