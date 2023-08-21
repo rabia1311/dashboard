@@ -1,8 +1,18 @@
 import React from 'react'
-
+import Sidebar from "../components/Sidebar/Sidebar";
+import Updates from '../components/Update/Updates';
+import CityChart from '../components/Charts/Citychart';
 const City = () => {
   return (
-    <div>City</div>
+
+    <div className="App">
+    <div className="AppGlass">
+  
+      <Sidebar />
+ <CityChart/>
+ <Updates/>
+    </div>
+  </div>
   )
 }
 
