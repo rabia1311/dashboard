@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "../FilterTable/Filter.css"
-const FilterTable= () => {
+const Topicfilter= () => {
   const [data, setData] = useState([]);
   const [searchFilter, setSearchFilter] = useState('');
 
@@ -33,7 +33,7 @@ const FilterTable= () => {
       />
       {filteredData.map(item => (
         <div key={item._id}>
-          <p>{item.region}</p>
+          <p>{item.topic}</p>
          
         </div>
       ))}
@@ -41,4 +41,4 @@ const FilterTable= () => {
   );
 };
 
-export default FilterTable;
+export default Topicfilter;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "../FilterTable/Filter.css"
-const FilterTable= () => {
+const Pestle= () => {
   const [data, setData] = useState([]);
   const [searchFilter, setSearchFilter] = useState('');
 
@@ -24,7 +24,7 @@ const FilterTable= () => {
 
   return (
     <div  className='container'>
-      <h1>Filter</h1>
+      <h1>Filter BY PESTLE</h1>
       <input
         type="text"
         placeholder="Search..."
@@ -33,7 +33,7 @@ const FilterTable= () => {
       />
       {filteredData.map(item => (
         <div key={item._id}>
-          <p>{item.region}</p>
+          <p>{item.pestle}</p>
          
         </div>
       ))}
@@ -41,4 +41,4 @@ const FilterTable= () => {
   );
 };
 
-export default FilterTable;
+export default Pestle;
