@@ -1,32 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Chart } from "react-google-charts";
-import "../Year/year.css"
-const data = [
-  ["ID", "X", "Y", "Temperature"],
-  ["", 80, 167, 120],
-  ["", 79, 136, 130],
-  ["", 78, 184, 50],
-  ["", 72, 278, 230],
-  ["", 81, 200, 210],
-  ["", 72, 170, 100],
-  ["", 68, 477, 80],
-];
+import axios from "axios";
+const Topicchart = () => {
+  const [chartData, setChartData] = useState([]);
 
-const options = {
-  colorAxis: { colors: ["yellow", "red"] },
- // Adjust the height here
-};
+  const options = {
+    title: "Topic Distribution",
+    is3D: true,
+  };
 
-function Topicchart() {
+  useEffect(() => {
+    // Fetch data from the API
+    fetch("http://localhost:5000/dashboard/get")
+      .then((response) => response.json())
+      .then((data) => {
+        // Assuming the data is an array of objects
+        setChartData(data.map(item => [item.topic, 1])); // Create a row for each topic
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []); // Empty dependency array ensures this effect runs only once on mount
+
   return (
-    <Chart
-    className="chart-container"
-      chartType="BubbleChart"
-    
-      data={data}
-      options={options}
-    />
+    <div>
+      <Chart
+        chartType="PieChart"
+        data={[["Topic", "Count"], ...chartData]} // Include header and chartData
+        options={options}
+        width={"100%"}
+        height={"400px"}
+      />
+    </div>
   );
-}
+};
 
 export default Topicchart;

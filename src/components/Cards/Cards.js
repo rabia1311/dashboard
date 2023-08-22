@@ -70,10 +70,7 @@ const CardModal = ({ title, content }) => {
 const Cards = () => {
   return (
     <div className="ccontainer">
-      <CardModal 
-       title="Intensity"
-        content="Intensity refers to the degree or strength of a quality, force, or phenomenon, often indicating the magnitude of its impact or effect."
-      />
+      
       <CardModal
         title="Likelihood"
         content="Likelihood refers to the probability or chance of an event or circumstance occurring."

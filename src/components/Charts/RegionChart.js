@@ -1,33 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Chart } from "react-google-charts";
-import "../Year/year.css"
-const data = [
-  ["Dinosaur", "Length"],
-  ["Acrocanthosaurus (top-spined lizard)", 12.2],
-  ["Albertosaurus (Alberta lizard)", 9.1],
-  ["Allosaurus (other lizard)", 12.2],
-  ["Apatosaurus (deceptive lizard)", 22.9],
-  // ... rest of the data ...
-  ["Velociraptor (swift robber)", 1.8],
-];
+import axios from "axios";
+import "../../../src/Bar.css"
+const RegionChart = () => {
+  const [chartData, setChartData] = useState([]);
 
-const options = {
-  title: "Lengths of dinosaurs, in meters",
-  legend: { position: "none" },
-  colors: ["green"],
+  useEffect(() => {
+    // Fetch data from the backend
+    fetch("http://localhost:5000/dashboard/get")
+      .then((response) => response.json())
+      .then((data) => {
+        // Count occurrences of each region
+        const regionCounts = {};
+        data.forEach((item) => {
+          const region = item.region;
+          if (region) {
+            regionCounts[region] = (regionCounts[region] || 0) + 1;
+          }
+        });
 
-};
+        // Convert region counts to chart data format
+        const chartDataFormat = [["Region", "Count"]];
+        Object.keys(regionCounts).forEach((region) => {
+          chartDataFormat.push([region, regionCounts[region]]);
+        });
 
-function RegionChart() {
+        setChartData(chartDataFormat);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
+  const options = {
+    chart: {
+      title: "Region Distribution",
+      subtitle: "Count of Data Points by Region",
+    },
+  };
+
   return (
-    <Chart
-    className="chart-container"
-      chartType="Histogram"
-      
-      data={data}
-      options={options}
-    />
+    <div>
+      <Chart className="barchart"
+        chartType="Bar"
+        data={chartData}
+        options={options}
+        width="100%"
+        height="500px"
+      />
+    </div>
   );
-}
+};
 
 export default RegionChart;

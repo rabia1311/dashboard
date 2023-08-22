@@ -57,7 +57,7 @@ const Sidebar = () => {
                     <div>
                         <ScatterPlotTwoToneIcon />
                     </div>
-                    <span>City</span>
+                    <span>Intensity</span>
                 </div>
                 <div className="menuItem"  onClick={() => navigate("/filter")}>
                     <div>
