@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Chart } from "react-google-charts";
-
+import "../Year/year.css"
 const Citychart = () => {
   const [chartData, setChartData] = useState([]);
 
@@ -38,7 +38,11 @@ const Citychart = () => {
 
   return (
     <div>
-      <Chart chartType="BarChart" width="100%" height="400px" data={chartDataTable} options={options} />
+      <h1>Intensity Graph</h1>
+      <hr></hr>
+      <br></br>
+      <br></br> <br></br>
+      <Chart chartType="BarChart" className="chartcontainer"  data={chartDataTable} options={options} />
     </div>
   );
 };

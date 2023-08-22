@@ -30,13 +30,16 @@ const Yearq = () => {
   }, []);
 
   return (
-    <div className="chart-container">
+    <div className="chartcontainer">
+      <h1>Year Graph Displayed</h1>
+      <hr></hr>
+      <br></br>
+      <br></br>
       <Chart
         chartType="Line"
         data={chartData}
         options={options}
-        width="100%"
-        height="500px"
+       
       />
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "../FilterTable/Filter.css"
+import "../Year/year.css"
 const Pestle= () => {
   const [data, setData] = useState([]);
   const [searchFilter, setSearchFilter] = useState('');
@@ -23,7 +23,7 @@ const Pestle= () => {
   );
 
   return (
-    <div  className='container'>
+    <div  className='chartcontainer'>
       <h1>Filter BY PESTLE</h1>
       <input
         type="text"
