@@ -60,7 +60,7 @@ const CardModal = ({ title, content }) => {
           </IconButton>
           <h2 id={`${title}-modal-title`}>{title}</h2>
           <p>{content}</p>
-          <Barchat className="bar"/>
+         
         </div>
       </Modal>
     </div>

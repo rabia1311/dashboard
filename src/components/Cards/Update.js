@@ -1,34 +1,43 @@
 import * as React from 'react';
-
+import { useState, useEffect } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import "../Cards/update.css"
+import axios from "axios"
 
-const  Update=()=> {
+const Update = () => {
+  const [updates, setUpdates] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from the API
+    axios.get('http://localhost:5000/dashboard/get')
+      .then(response => {
+        setUpdates(response.data); // Update state with fetched data
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []); // The empty dependency array makes this effect run once after initial render
+
   return (
-    <Card className="cardcontainer" sx={{ minWidth: 275  , backgroundColor: 'lightcyan'}}>
+    <Card className="cardcontainer" sx={{ minWidth: 275, backgroundColor: 'lightcyan' }}>
       <CardContent>
         <Typography sx={{ fontSize: 18 }} color="text.primary" gutterBottom>
-          Updates
+          INSIGHTS
         </Typography>
-        <Typography variant="h6" component="div">
-          Name: John
-        </Typography>
-        <Typography variant="body1">
-          Insights: U.S. petroleum consumption is projected to remain below the 2005 level.
-        </Typography>
-      </CardContent>
-      <CardContent>
-       
-        <Typography variant="h6" component="div">
-          Name: Alena
-        </Typography>
-        <Typography variant="body1">
-        Mars, Unilever, Cargill and Mondelēz are already using GFW Commodities to assess deforestation risks in their palm oil, soy and cocoa supply chains across a collective area of land the size of Mexico
-        </Typography>
+        {/* Map over the updates and render insights */}
+        {updates.map((update, index) => (
+          <div key={index}>
+            
+            <Typography variant="body1">
+               {update.insight}
+            </Typography>
+          </div>
+        ))}
       </CardContent>
     </Card>
   );
 }
+
 export default Update;
